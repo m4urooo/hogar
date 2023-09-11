@@ -14,10 +14,10 @@ class HogarSeeder extends Seeder
      */
     public function run()
     {
-        Departament::create([
+        Hogar::create([
             'nombre_hogar'=> 'Ruca Suyai'
         ]);
-        Departament::create([
+        Hogar::create([
             'nombre_hogar'=> 'Las Parras'
         ]);
        
