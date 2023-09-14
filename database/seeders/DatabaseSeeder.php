@@ -15,8 +15,6 @@ class DatabaseSeeder extends Seeder
         $this->call([
             HogarSeeder::class,
             UserSeeder::class,
-          
-    
         ]);
     }
 }

@@ -23,7 +23,7 @@ return new class extends Migration
 
             $table->foreign('id_hogar')
             ->references('id')
-            ->on('hogar');
+            ->on('hogars');
 
         });
     }
