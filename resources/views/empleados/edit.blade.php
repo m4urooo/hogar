@@ -10,8 +10,9 @@
 
 
     <form method="POST" action="{{ route('empleados.update' , $empleado->id) }}" enctype="multipart/form-data">
-        @csrf
         @method('PUT')
+        @csrf
+
 
 
         <div class="row mb-3">
@@ -70,6 +71,10 @@
                 <input type="text"  value="{{ $empleado->valor_afp }}"  class="form-control" name="valor_afp">
             </div>
             <div class="col-md-2">
+                <label for="inputPsalud" class="form-label">Seguro de Cesantía</label>
+                <input type="text"  value="{{ $empleado->seguro_cesantia }}" class="form-control" name="seguro_cesantia">
+            </div>
+            <div class="col-md-2">
                 <label  class="form-label">Correo</label>
                 <input type="email" value="{{ $empleado->email }}"   class="form-control" name="email">
             </div>
@@ -93,18 +98,56 @@
                 <input type="text"  value="{{ $empleado->valor_hora_ex }} " class="form-control" name="valor_hora_ex">
             </div>
             <div class="col-md-2">
-                <label for="inputAfp" class="form-label">Asig. Familiar</label>
-                <input type="text" value="{{ $empleado->asig_familiar }} "  class="form-control" name="asig_familiar">
+                <label for="inputPsalud" class="form-label">Valor H/EX feriado</label>
+                <input type="text" class="form-control" value="{{ $empleado->valor_hora_ex_feriado }}" name="valor_hora_ex_feriado">
+            </div>
+       
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-md-2">
+                <label for="inputAfp" class="form-label">Cantidad Asig. Familiar</label>
+                <input type="number" value="{{$empleado->asig_familiar_cantidad}}"  class="form-control" name="asig_familiar_cantidad">
+            </div>
+            <div class="col-md-2">
+                <label for="inputRut4" class="form-label">Valor Asig. Familiar</label>
+                <input type="text"  value="{{$empleado->asig_familiar_valor}}"   class="form-control" name="asig_familiar_valor">
             </div>
             <div class="col-md-2">
                 <label for="inputRut4" class="form-label">C. Compensación</label>
-                <input type="text"  value="{{ $empleado->caja_comp }}"  class="form-control" name="caja_comp">
+                <input type="text"  value="{{$empleado->caja_comp}}"  class="form-control" name="caja_comp">
             </div>
             <div class="col-md-1">
                 <label for="inputPsalud" class="form-label">% Caja</label>
-                <input type="text"  value="{{ $empleado->valor_caja_comp }} " class="form-control" name="valor_caja_comp">
+                <input type="text"  value="{{$empleado->valor_caja_comp}}" class="form-control" name="valor_caja_comp">
             </div>
+        </div>
 
+        <b>OTROS</b>
+
+        <div class="row mb-3">
+            <div class="col-md-2">
+                <label for="inputPsalud" class="form-label">Prestamo CLA</label>
+                <input type="text" class="form-control" value="{{ $empleado->prestamo_cla }}" name="prestamo_cla">
+               
+            </div>
+            <div class="col-md-2">
+                <label for="inputPsalud" class="form-label">Valor cuota </label>
+                <input type="text" class="form-control" value="{{ $empleado->valor_cuota_prestamo_cla }}" name="valor_cuota_prestamo_cla">
+               
+            </div>
+            <div class="col-md-2">
+                <label for="inputPsalud" class="form-label">Fecha Inicio </label>
+                <input type="date" class="form-control" value="{{ $empleado->fecha_prestamo_cla }}"  name="fecha_prestamo_cla">
+            </div>
+            <div class="col-md-2">
+                <label for="inputPsalud" class="form-label">Cantidad Cuotas </label>
+                <input type="number" class="form-control" value="{{ $empleado->cantidad_cuotas_prestamo_cla }}" name="cantidad_cuotas_prestamo_cla">
+            </div>
+            <div class="col-md-2">
+                <label for="inputPsalud" class="form-label">Cuotas Restantes</label>
+                <input type="number" class="form-control" value="{{ $empleado->cuotas_restantes_prestamo_cla }}" name="cuotas_restantes_prestamo_cla">
+            </div>
 
         </div>
 

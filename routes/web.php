@@ -66,8 +66,12 @@ Route::prefix('mantenedores')->name('mantenedores.')->middleware('auth')->group(
 Route::prefix('pdf')->name('pdf.')->middleware('auth')->group(function(){
 
     Route::get('crear', [PDFController::class,'crear'])->name('crear');
+    Route::get('crear2', [PDFController::class,'crear2'])->name('crear2');
     Route::get('getPDF',[PDFController::class,'getPDF'])->name('getPDF');
     Route::post('crearPDF',[PDFController::class, 'crearPDF'])->name('crearPDF');
+    Route::post('crearPDF2',[PDFController::class, 'crearPDF2'])->name('crearPDF2');
+    Route::get('detalles/{id}',[PDFController::class,'detalles'])->name('detalles');
+    
     
 
 });

@@ -57,7 +57,12 @@ class EmpleadoController extends Controller
     public function update(Request $request, $id)
     {
         
+
+
+        //dd($empleado);
+       
         $empleado = Empleado::find($id);
+     
         $empleado->update($request->all());
 
         return redirect()->route('empleados.index')

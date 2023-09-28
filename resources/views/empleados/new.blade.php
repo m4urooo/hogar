@@ -94,16 +94,27 @@
                 <input type="text" class="form-control" name="valor_hora_ex">
             </div>
             <div class="col-md-2">
-                <label for="inputAfp" class="form-label">Asig. Familiar</label>
-                <input type="text" class="form-control" name="asig_familiar">
+                <label for="inputPsalud" class="form-label">Valor H/EX feriado</label>
+                <input type="text" class="form-control" name="valor_hora_ex_feriado">
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-md-2">
+                <label for="inputAfp" class="form-label">Cantidad Asig. Familiar</label>
+                <input type="number"  class="form-control" name="asig_familiar_cantidad">
+            </div>
+            <div class="col-md-2">
+                <label for="inputAfp" class="form-label">Valor Asig. Familiar</label>
+                <input type="number"   class="form-control" name="asig_familiar_valor">
             </div>
             <div class="col-md-2">
                 <label for="inputRut4" class="form-label">C. Compensación</label>
-                <input type="text" class="form-control" name="caja_comp">
+                <input type="text"   class="form-control" name="caja_comp">
             </div>
             <div class="col-md-1">
                 <label for="inputPsalud" class="form-label">% Caja</label>
-                <input type="text" class="form-control" name="valor_caja_comp">
+                <input type="text"  class="form-control" name="valor_caja_comp">
             </div>
         </div>
 
@@ -112,16 +123,25 @@
         <div class="row mb-3">
             <div class="col-md-2">
                 <label for="inputPsalud" class="form-label">Prestamos CLA</label>
-                <input type="text" class="form-control" name="prestamos_cla">
+                <input type="text" class="form-control" name="prestamo_cla">
+               
+            </div>
+            <div class="col-md-2">
+                <label for="inputPsalud" class="form-label">Valor cuota </label>
+                <input type="text" class="form-control" name="valor_cuota_prestamo_cla">
                
             </div>
             <div class="col-md-2">
                 <label for="inputPsalud" class="form-label">Fecha Inicio </label>
-                <input type="date" class="form-control" name="fecha_prestamos_cla">
+                <input type="date" class="form-control" name="fecha_prestamo_cla">
             </div>
             <div class="col-md-2">
-                <label for="inputPsalud" class="form-label">Cuotas restantes </label>
-                <input type="number" class="form-control" name="cuotas_prestamos_cla">
+                <label for="inputPsalud" class="form-label">Cantidad Cuotas </label>
+                <input type="number" class="form-control"  name="cantidad_cuotas_prestamo_cla">
+            </div>
+            <div class="col-md-2">
+                <label for="inputPsalud" class="form-label">Cuotas Restantes</label>
+                <input type="number" class="form-control"  name="cuotas_restantes_prestamo_cla">
             </div>
 
         </div>

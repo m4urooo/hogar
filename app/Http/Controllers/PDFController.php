@@ -24,6 +24,7 @@ class PDFController extends Controller
     public function crear(Empleado $empleado)
     {
          $todos= Empleado::all();
+        
         // foreach($todos as $todo)
         // {
         //     print($todo);
@@ -35,7 +36,9 @@ class PDFController extends Controller
 
     public function crearPDF(Request $request, Empleado $empleado)
     {
+    
         $datos=$request->all();
+        // dd($datos);
         $id_empleado= $datos['id_empleado'];
 
         $usuario = Empleado::find($id_empleado);
@@ -60,6 +63,7 @@ class PDFController extends Controller
         $horas_trabajadas = $datos['horas_trabajadas'];
         $horas_extras = $datos['horas_extras'];
         $aguinaldo_bonos = $datos['aguinaldo_bonos'];
+        $anticipos = $datos['anticipos'];
 
         $string_value=($usuario->sueldo_base/30)*9;
         
@@ -110,13 +114,59 @@ class PDFController extends Controller
 
         $total_horas_extras=$horas_extras * $usuario->valor_hora_ex;
         $total_horas_extras=number_format($total_horas_extras);
+
+        $seguro_cesantia = ($total_imponible * $usuario->seguro_cesantia)/100;
+        $seguro_cesantia = number_format($seguro_cesantia); 
+
+        $anticipos = number_format($anticipos);
+
+
+
     //    dd($descuento_salud);
 
 		// $pdf = PDF::loadView('pdf.getPDF', compact('name'))->setPaper('$customPaper');
-		$pdf = PDF::loadView('pdf.getPDF', compact('descuento_caja','descuento_afp','total_horas_extras','descuento_salud',
+		$pdf = PDF::loadView('pdf.getPDF', compact('anticipos','seguro_cesantia','descuento_caja','descuento_afp','total_horas_extras','descuento_salud',
         'total_imponible','valorafpformat','sueldodiv30','usuario','sueldo',
         'sueldoformat','horaexformat','newNumber','sueldo_total',
         'dias_trabajados','horas_trabajadas','horas_extras','aguinaldo_bonos'));
 		return $pdf->stream('pdf');
     }
+
+    public function crear2(Empleado $empleado){
+
+        $todos= Empleado::all();
+        $heads=[
+            ['label' =>' Rut', 'width' =>20],
+            'Nombre',
+         
+            ['label' => 'Liquidación', 'no-export' => true, 'width' => 15],
+
+        ];
+
+        // foreach($todos as $todo)
+        // {
+        //     print($todo);
+        // }
+        // dd($todos['name']);
+         return view('pdf.crear2',compact('todos','heads'));
+
+
+       
+    }
+
+    public function detalles($id){
+
+        $empleado = Empleado::find($id);
+
+
+       return view('pdf.detalles', compact('empleado'));
+    }
+
+    public function crearPDF2(Request $request)
+    {
+
+        $datos=$request->all();
+        dd($datos);
+    }
+
 }

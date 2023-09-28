@@ -600,8 +600,8 @@ body { margin-left: 0.25in; margin-right: 0.25in; margin-top: 0.75in; margin-bot
             <td class="column5 style108 null"></td>
             <td class="column6 style28 s">SEG CESANTÍA</td>
             <td class="column7 style28 null"></td>
-            <td class="column8 style110 n">0.6%</td>
-            <td class="column9 style112 f">$ 4,380</td>
+            <td class="column8 style110 n">{{ $usuario->seguro_cesantia }}%</td>
+            <td class="column9 style112 f">$ {{$seguro_cesantia }}</td>
             <td class="column10 style113 null"></td>
             <td class="column11">&nbsp;</td>
             <td class="column12">&nbsp;</td>
@@ -616,7 +616,7 @@ body { margin-left: 0.25in; margin-right: 0.25in; margin-top: 0.75in; margin-bot
             <td class="column6 style28 s">ANTICIPOS</td>
             <td class="column7 style28 null"></td>
             <td class="column8 style28 null"></td>
-            <td class="column9 style29 null"></td>
+            <td class="column9 style112 f">$ {{$anticipos }}</td>
             <td class="column10 style107 null"></td>
             <td class="column11">&nbsp;</td>
             <td class="column12">&nbsp;</td>

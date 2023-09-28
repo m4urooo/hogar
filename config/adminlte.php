@@ -336,6 +336,11 @@ return [
             'icon' => 'fas fa-file-pdf',
         ],
         [
+            'text' => ' Crear Liquidacion 2',
+            'url'  => 'pdf/crear2',
+            'icon' => 'fas fa-file-pdf',
+        ],
+        [
             'text' => 'PDF',
             'url'  => 'pdf/getPDF',
             'icon' => 'fas fa-file-pdf',
